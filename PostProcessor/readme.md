@@ -4,3 +4,4 @@
 ### 2-BeanFactoryPostProcessor
 ### 3-BeanPostProcessor
 > 每个普通bean实例化时都要执行此后置处理器
+### 4-普通bean实例化
