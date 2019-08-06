@@ -13,12 +13,13 @@ import org.springframework.stereotype.Component;
 public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor {
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
+        System.out.println("BeanDefinitionRegistryPostProcessor-----------------------postProcessBeanDefinitionRegistry()");
         BeanDefinition beanDefinition = BeanDefinitionBuilder.rootBeanDefinition(User.class).getBeanDefinition();
         registry.registerBeanDefinition("user1",beanDefinition);
     }
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-
+        System.out.println("BeanDefinitionRegistryPostProcessor----------------postProcessBeanFactory()");
     }
 }

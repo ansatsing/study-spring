@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-
+        /**这里也可以注册BeanDefinition*/
+        System.out.println("BeanFactoryPostProcessor-------------------postProcessBeanFactory()");
     }
 }
