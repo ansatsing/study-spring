@@ -25,11 +25,11 @@ public class BeanMetadataConfigurationDemo {
         //the default encode of properties file  is iso-8859-1,but current encode is utf-8,so messy code will appear
         // if not does like below.
         String file = "META-INF/user.properties";
-        Resource resource = new ClassPathResource(file);
-        EncodedResource encodedResource = new EncodedResource(resource,"UTF-8");
+        Resource messyResource = new ClassPathResource(file);
+        EncodedResource encodedResource = new EncodedResource(messyResource,"UTF-8");
 
 
-        //propertiesReader.loadBeanDefinitions(resource); //will appear messy code
+        //propertiesReader.loadBeanDefinitions(messyResource); //will appear messy code
         propertiesReader.loadBeanDefinitions(encodedResource);//will not appear messy code
 
         User user = beanFactory.getBean(User.class);
